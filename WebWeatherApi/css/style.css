@@ -6,6 +6,7 @@ input[type=text], input[type=submit] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: 'Rouge Script';
 }
 input[type=checkbox], #details{
     width: 50%;
@@ -14,25 +15,27 @@ input[type=checkbox], #details{
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
+    font-family: 'Rouge Script';
 }
 input[type=submit] {
     background-color: #123456;
     color: white;
     cursor: pointer;
-    float: left;    
+    float: left;   
+    
 }
-
-#title_header{
-    font-family: "Arial", "Helvetica";
-    font-size: 25px;
+#title_header{ 
+    background-color: #123456;
+    color: #CEF0D4; 
+    font-family: 'Rouge Script';
+    font-size: 35px;  
+    margin-top: 40px; 
+    text-align: left; 
+    text-shadow: 0 1px 1px #fff; 
 }
-#web_header{    
-    background-color: black;
-    color: white;   
-}
-#form_header{
-     background-color: orange;
-    color: black;        
+label {
+    color: #987654; 
+    font-family: 'Rouge Script';
+    margin-top: 5px;
 }
