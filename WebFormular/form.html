@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Stranka</title>
+	<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="jquery-3.2.1.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+
+<div>
+    <div id="form">
+     <div id="title_header"><span id="web_header">Web</span><span id="form_header">Form</span></div>
+     
+      <br>  
+      
+       <label for="first_name">First Name:</label>
+       <div>
+           <input type="text" id="first_name" placeholder="John">
+           <span id="fnameErr"></span>
+       </div>
+    
+        
+        <label for="last_name">Last Name:</label>
+        <div>
+             <input type="text" id="last_name" placeholder="Cena">
+             <span id="lnameErr"></span>
+        </div>
+      
+        
+        <label for="date">Date:</label>
+        <div>
+             <input type="date" id="date" placeholder="First Name">
+            <span id="dateErr"></span>
+        </div>
+       
+       <p >Gender:</p>
+        <div id="genderBox">
+            <label for="male"><input type="radio" name="gender" id="male" value="Male" checked>Male</label>
+             
+            <label for="female"><input type="radio" name="gender" id="female" value="Female">Female</label>
+        </div>
+        
+       <br>
+        <input type="submit" id="submitBtn" value="Submit">
+</div>
+        
+   <br><br><br>
+    
+    <div id="formTable">
+        
+    </div>
+    
+    <div>
+        <input type="submit" id="loadData" value="Load">
+        <input type="submit" id="saveData" value="Save">
+    </div>
+    
+</div>
+	
+
+</body>
+</html>
