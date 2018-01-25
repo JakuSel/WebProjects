@@ -43,9 +43,9 @@ $(td).append(city);
 tr.append(td1);
 */
 var infoResults=$("#tableResults");
-var table=$("<table border='0'></table>");
+var table=$("<table border='1'></table>");
 var lineCity=$('<tr><td>City:</td><td>'+city+'</td></tr>');
-var lineTemp=$('<tr><td>Temp:</td><td>'+(parseInt(data.main.temp)-273.15)+"°C"+'</td></tr>');
+var lineTemp=$('<tr><td>Temp:</td><td>'+(Math.round((parseInt(data.main.temp,10)-273.15)*100)/100)+"°C"+'</td></tr>');
 var lineDesc=$('<tr><td>Description:</td><td>'+data.weather[0].description+'</td></tr>');
 var linePress=$('<tr><td>Presure:</td><td>'+data.main.pressure+'</td></tr>');
         
@@ -58,11 +58,17 @@ table.append(linePress);
         
 if($("#detailsCheck").prop('checked'))
     {
-//var lineRise=getLine("Sun rise", ($.datepicker.formatDate.('hh:MM:ss',(data.sys.sunrise)));
-var lineSet=getLine("Sun set", data.sys.sunset);
+var rise=new Date(data.sys.sunrise*1000);
+var set=new Date(data.sys.sunset*1000);
+        
+var lineRise=getLine("Sun rise", rise.getHours()+":"+rise.getMinutes()+":"+rise.getSeconds());
+var lineSet=getLine("Sun set", set.getHours()+":"+set.getMinutes()+":"+set.getSeconds());
+        
 var lineWind=getLine("Wind Speed", data.wind.speed+"KM/H");
-var lineMin=getLine("Min. temp:", data.main.temp_min-273.15);
-var lineMax=getLine("Max. temp:", data.main.temp_max-273.15);
+        
+var lineMin=getLine("Min. temp:", (Math.round((parseInt(data.main.temp_min)-273.15)*100)/100)+"°C");
+var lineMax=getLine("Max. temp:",(Math.round((parseInt(data.main.temp_max)-273.15)*100)/100)+"°C");
+        
 table.append(lineRise); 
 table.append(lineSet); 
 table.append(lineMin); 

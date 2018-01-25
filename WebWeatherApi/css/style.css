@@ -39,3 +39,9 @@ label {
     font-family: 'Rouge Script';
     margin-top: 5px;
 }
+#tableResults tr:nth-child(even){
+    background-color: beige;
+}
+#tableResults tr:nth-child(odd){
+    background-color:cornflowerblue;
+}
