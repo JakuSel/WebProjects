@@ -30,6 +30,7 @@ $.ajax({
 			},
     dataType: "json",
     success: function(data){
+        
 console.log(data.main.temp-273.15+"°C");
 console.log(data.weather[0].description);
         
@@ -44,7 +45,7 @@ tr.append(td1);
 */
 var infoResults=$("#tableResults");
 var table=$("<table border='1'></table>");
-var lineCity=$('<tr><td>City:</td><td>'+city+'</td></tr>');
+var lineCity=$('<tr><td>City:</td><td>'+data.name+'</td></tr>');
 var lineTemp=$('<tr><td>Temp:</td><td>'+(Math.round((parseInt(data.main.temp,10)-273.15)*100)/100)+"°C"+'</td></tr>');
 var lineDesc=$('<tr><td>Description:</td><td>'+data.weather[0].description+'</td></tr>');
 var linePress=$('<tr><td>Presure:</td><td>'+data.main.pressure+'</td></tr>');
@@ -76,9 +77,16 @@ table.append(lineMax);
   
     }
 
-infoResults.append(table);
-        
 
+
+var googleMap=getLine("Map:", "<A target='_blank' href='https://www.google.com/maps/search/?api=1&query="+ data.coord.lat +','+ data.coord.lon +"'>" +data.name+"</A>");
+
+console.log(data.coord.lat);
+console.log(data.coord.lon);
+        
+table.append(googleMap);
+        
+infoResults.append(table);
 			},
     type: "GET"
 			});
